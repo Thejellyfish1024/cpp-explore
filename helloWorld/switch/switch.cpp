@@ -19,7 +19,7 @@ int main()
         break;
 
     default:
-    cout << "hello";
+        cout << "hello";
         break;
     }
 };
