@@ -35,7 +35,12 @@ int main()
                 cout << " ";
             }
         }
-        if (i >= n)
+        if (i == n)
+        {
+            cout << endl;
+            continue;
+        }
+        else if (i > n)
         {
             right++;
             left--;
