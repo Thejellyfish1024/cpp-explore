@@ -1,0 +1,1 @@
+{"name":"Local: prc-1","url":"c:\\projects\\cpp-explore\\helloWorld\\arraySorting\\insertionSort\\prc-1.cpp","tests":[{"id":1720870431205,"input":"6\n1 5 6 2 3 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\projects\\cpp-explore\\helloWorld\\arraySorting\\insertionSort\\prc-1.cpp","group":"local","local":true}

@@ -1,5 +1,4 @@
-// Input : 10, 11
-// Output : 101
+// selection sort method
 
 #include <bits/stdc++.h>
 // #include <climits>
