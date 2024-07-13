@@ -1,0 +1,1 @@
+{"name":"Local: prc-3","url":"c:\\projects\\cpp-explore\\helloWorld\\functions\\numberConversions\\prc-3.cpp","tests":[{"id":1720853243393,"input":"10101\n11010","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\projects\\cpp-explore\\helloWorld\\functions\\numberConversions\\prc-3.cpp","group":"local","local":true}
