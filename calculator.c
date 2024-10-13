@@ -19,6 +19,7 @@ void SIN_INVERSE();
 void COS_INVERSE();
 void TAN_INVERSE();
 void twoRootsLinearEquations();
+void threeRootsLinearEquations();
 
 int main()
 {
@@ -44,6 +45,7 @@ int main()
     printf(" 15 : Arc_Cos()\n");
     printf(" 16 : Arc_Tan()\n");
     printf(" 17 : Two Roots Linear Equations\n");
+    printf(" 18 : Three Roots Linear Equations\n");
 
     while (1)
     {
@@ -123,6 +125,9 @@ int main()
             break;
         case 17:
             twoRootsLinearEquations();
+            break;
+        case 18:
+            threeRootsLinearEquations();
             break;
 
         case 0:
@@ -326,4 +331,35 @@ void twoRootsLinearEquations()
     printf("The solutions are:\n");
     printf("x = %0.4lf\n", x);
     printf("y = %0.4lf\n", y);
+}
+
+
+void threeRootsLinearEquations() {
+    double a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3;
+    double x, y, z;
+
+    printf("Enter coefficients a1, b1, c1, d1 for the first equation (a1x + b1y + c1z + d1 = 0): ");
+    scanf("%lf %lf %lf %lf", &a1, &b1, &c1, &d1);
+
+    printf("Enter coefficients a2, b2, c2, d2 for the second equation (a2x + b2y + c2z + d2 = 0): ");
+    scanf("%lf %lf %lf %lf", &a2, &b2, &c2, &d2);
+
+    printf("Enter coefficients a3, b3, c3, d3 for the third equation (a3x + b3y + c3z + d3 = 0): ");
+    scanf("%lf %lf %lf %lf", &a3, &b3, &c3, &d3);
+
+    double determinant = a1 * (b2 * c3 - b3 * c2) - b1 * (a2 * c3 - a3 * c2) + d1 * (a2 * b3 - a3 * b2);
+    
+    if (determinant == 0) {
+        printf("The equations have no unique solution (they may be parallel or coincident).\n");
+        return;
+    }
+
+    x = (d1 * (b2 * c3 - b3 * c2) - b1 * (d2 * c3 - d3 * c2) + c1 * (d2 * b3 - d3 * b2)) / determinant;
+    y = (a1 * (d2 * c3 - d3 * c2) - d1 * (a2 * c3 - a3 * c2) + c1 * (a2 * d3 - a3 * d2)) / determinant;
+    z = (a1 * (b2 * d3 - b3 * d2) - b1 * (a2 * d3 - a3 * d2) + d1 * (a2 * b3 - a3 * b2)) / determinant;
+
+    printf("The solutions are:\n");
+    printf("x = %0.4lf\n", x);
+    printf("y = %0.4lf\n", y);
+    printf("z = %0.4lf\n", z);
 }
