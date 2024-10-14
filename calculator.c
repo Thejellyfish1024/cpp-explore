@@ -193,7 +193,13 @@ void addition()
 {
     printf("Enter the numbers you want to add: ");
     double a, b;
-    scanf("%lf%lf", &a, &b);
+    if (scanf("%lf%lf", &a, &b) != 2)
+    {
+        printf("Invalid input. Please enter valid number values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     printf(" Sum = %0.04lf\n", a + b);
 }
 
@@ -201,7 +207,13 @@ void subtraction()
 {
     printf("Enter the numbers you want to subtract: ");
     double a, b;
-    scanf("%lf%lf", &a, &b);
+    if (scanf("%lf%lf", &a, &b) != 2)
+    {
+        printf("Invalid input. Please enter valid number values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     printf(" Subtraction = %0.04lf\n", a - b);
 }
 
@@ -209,7 +221,13 @@ void multiplication()
 {
     printf("Enter the numbers you want to multiply: ");
     double a, b;
-    scanf("%lf%lf", &a, &b);
+    if (scanf("%lf%lf", &a, &b) != 2)
+    {
+        printf("Invalid input. Please enter valid number values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     printf(" Multiplication = %0.04lf\n", a * b);
 }
 
@@ -217,7 +235,13 @@ void division()
 {
     printf("Enter the numbers you want to divide: ");
     double a, b;
-    scanf("%lf%lf", &a, &b);
+    if (scanf("%lf%lf", &a, &b) != 2)
+    {
+        printf("Invalid input. Please enter valid number values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     printf(" Division %0.04lf\n", a / b);
 }
 ////////////////////  Zulkar Nayem - End /////////////////
@@ -228,7 +252,13 @@ void power()
     double base;
     double power;
     printf("Enter the base and the power: ");
-    scanf("%lf%lf", &base, &power);
+    if (scanf("%lf%lf", &base, &power) != 2)
+    {
+        printf("Invalid input. Please enter valid number value.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     double value = pow(base, power);
     printf("The power is %0.4lf", value);
 }
@@ -237,7 +267,13 @@ void square()
 {
     double number;
     printf("Enter the number you want the square of: ");
-    scanf("%lf", &number);
+    if (scanf("%lf", &number) != 1)
+    {
+        printf("Invalid input. Please enter valid number value.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     double value = pow(number, 2);
     printf("The square of %lf is %0.4lf", number, value);
 }
@@ -246,7 +282,13 @@ void cube()
 {
     double number;
     printf("Enter the number you want the cube of: ");
-    scanf("%lf", &number);
+    if (scanf("%lf", &number) != 1)
+    {
+        printf("Invalid input. Please enter valid number value.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     double value = pow(number, 3);
     printf("The cube of %lf is %0.4lf", number, value);
 }
@@ -255,9 +297,15 @@ void percentage()
 {
     double number, percentage;
     printf("Enter the number and the percentage(%%): ");
-    scanf("%lf", &number, &percentage);
-    double value = number * (percentage / 100);
-    printf("The %lf%% of %lf is %0.4lf", percentage, number, value);
+    if (scanf("%lf%lf", &number, &percentage) != 2)
+    {
+        printf("Invalid input. Please enter valid number values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+    double value = number * (percentage / 100.0);
+    printf("The %lf of %lf is %0.4lf", percentage, number, value);
 }
 ////////////////////  Tanim - End /////////////////
 
@@ -266,28 +314,55 @@ void modulus()
 {
     printf("Enter the numbers you want to find modulus of: ");
     int a, b;
-    scanf("%d%d", &a, &b);
+    if (scanf("%d%d", &a, &b) != 2)
+    {
+        printf("Invalid input. Please enter valid integer values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     printf("The modulus of %d and %d is %d\n", a, b, a % b);
 }
 
 void factorial()
 {
-    int n, factorial;
+    int n;
+    long long int factorial = 1;
+
     printf("Enter the number you want the factorial of: ");
-    scanf("%d", &n);
-    factorial = 1;
+    if (scanf("%d", &n) != 1)
+    {
+        printf("Invalid input. Please enter a valid integer.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+
+    if (n < 0)
+    {
+        printf("Factorial is possible for only positive numbers.\n");
+        return;
+    }
+
     for (int i = 1; i <= n; i++)
     {
-        factorial = factorial * i;
+        factorial *= i;
     }
-    printf("\nFactorial of %d is %d", n, factorial);
+
+    printf("Factorial of %d is %lld\n", n, factorial);
 }
 
 void squareroot()
 {
     double number;
     printf("Enter the number you want the square root of : ");
-    scanf("%lf", &number);
+    if (scanf("%lf", &number) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
     double root = sqrt(number);
     printf("The square root of %lf is %0.4lf", number, root);
 }
@@ -295,9 +370,15 @@ void squareroot()
 void cuberoot()
 {
     double number;
-    printf("Enter the number you want the square root of : ");
-    scanf("%lf", &number);
-    double root = pow(number, 1 / 3);
+    printf("Enter the number you want the cube root of : ");
+    if (scanf("%lf", &number) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+    double root = pow(number, 1.0 / 3.0);
     printf("The square root of %lf is %0.4lf", number, root);
 }
 
@@ -305,8 +386,14 @@ void nthRootOfX()
 {
     double number, r;
     printf("Enter the number and root value : ");
-    scanf("%lf%lf", &number, &r);
-    double root = pow(number, 1 / r);
+    if (scanf("%lf%lf", &number, &r) != 2)
+    {
+        printf("Invalid input. Please enter valid number values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+    double root = pow(number, 1.0 / r);
     printf("The value is %0.4lf", root);
 }
 ////////////////////  Suleiman - End /////////////////
