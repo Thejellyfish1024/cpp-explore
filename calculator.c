@@ -2,22 +2,37 @@
 #include <stdlib.h>
 #include <math.h>
 
+// Zulkar Nayem
 void addition();
 void subtraction();
 void multiplication();
 void division();
-void modulus();
-void factorial();
+
+// Tanim
 void power();
 void square();
 void cube();
+void percentage();
+
+// Suleiman
+void modulus();
+void factorial();
 void squareroot();
+void cuberoot();
+void nthRootOfX();
+
+// Tanvir
 void SIN();
 void COS();
 void TAN();
 void SIN_INVERSE();
 void COS_INVERSE();
 void TAN_INVERSE();
+
+// Rahim
+void LOG();
+void LN();
+void exponential();
 void twoRootsLinearEquations();
 void threeRootsLinearEquations();
 
@@ -32,20 +47,26 @@ int main()
     printf(" 2 : Subtraction \n");
     printf(" 3 : Multiplication \n");
     printf(" 4 : Division \n");
-    printf(" 5 : Modulus\n");
-    printf(" 6 : Power \n");
-    printf(" 7 : Factorial \n");
-    printf(" 8 : Square \n");
-    printf(" 9 : Cube \n");
-    printf(" 10 : Squareroot\n");
-    printf(" 11 : Sin()\n");
-    printf(" 12 : Cos()\n");
-    printf(" 13 : Tan()\n");
-    printf(" 14 : Arc_Sin()\n");
-    printf(" 15 : Arc_Cos()\n");
-    printf(" 16 : Arc_Tan()\n");
-    printf(" 17 : Two Roots Linear Equations\n");
-    printf(" 18 : Three Roots Linear Equations\n");
+    printf(" 5 : Power \n");
+    printf(" 6 : Square \n");
+    printf(" 7 : Cube \n");
+    printf(" 8 : Percentage \n");
+    printf(" 9 : Modulus\n");
+    printf(" 10 : Factorial \n");
+    printf(" 11 : Square-root\n");
+    printf(" 12 : Cube-root\n");
+    printf(" 13 : n-th Root Of X\n");
+    printf(" 14 : Sin()\n");
+    printf(" 15 : Cos()\n");
+    printf(" 16 : Tan()\n");
+    printf(" 17 : Arc_Sin()\n");
+    printf(" 18 : Arc_Cos()\n");
+    printf(" 19 : Arc_Tan()\n");
+    printf(" 20 : log\n");
+    printf(" 21 : ln\n");
+    printf(" 22 : e^x\n");
+    printf(" 23 : Two Roots Linear Equations\n");
+    printf(" 24 : Three Roots Linear Equations\n");
 
     while (1)
     {
@@ -78,55 +99,82 @@ int main()
             break;
 
         case 5:
-            modulus();
-            break;
-
-        case 6:
             power();
             break;
 
-        case 7:
-            factorial();
-            break;
-
-        case 8:
+        case 6:
             square();
             break;
 
-        case 9:
+        case 7:
             cube();
             break;
 
+        case 8:
+            percentage();
+            break;
+
+        case 9:
+            modulus();
+            break;
+
         case 10:
-            squareroot();
+            factorial();
             break;
 
         case 11:
-            SIN();
+            squareroot();
             break;
 
         case 12:
-            COS();
+            cuberoot();
             break;
 
         case 13:
-            TAN();
+            nthRootOfX();
             break;
+
         case 14:
-            SIN_INVERSE();
+            SIN();
             break;
 
         case 15:
-            COS_INVERSE();
+            COS();
             break;
 
         case 16:
+            TAN();
+            break;
+
+        case 17:
+            SIN_INVERSE();
+            break;
+
+        case 18:
+            COS_INVERSE();
+            break;
+
+        case 19:
             TAN_INVERSE();
             break;
-        case 17:
+
+        case 20:
+            LOG();
+            break;
+
+        case 21:
+            LN();
+            break;
+
+        case 22:
+            exponential();
+            break;
+
+        case 23:
             twoRootsLinearEquations();
             break;
-        case 18:
+
+        case 24:
             threeRootsLinearEquations();
             break;
 
@@ -140,18 +188,19 @@ int main()
     return 0;
 }
 
+////////////////////  Zulkar Nayem - Start /////////////////
 void addition()
 {
     printf("Enter the numbers you want to add: ");
-    float a, b;
-    scanf("%f%f", &a, &b);
-    printf(" Sum = %0.04f\n", a + b);
+    double a, b;
+    scanf("%lf%lf", &a, &b);
+    printf(" Sum = %0.04lf\n", a + b);
 }
 
 void subtraction()
 {
     printf("Enter the numbers you want to subtract: ");
-    int a, b;
+    double a, b;
     scanf("%lf%lf", &a, &b);
     printf(" Subtraction = %0.04lf\n", a - b);
 }
@@ -159,25 +208,66 @@ void subtraction()
 void multiplication()
 {
     printf("Enter the numbers you want to multiply: ");
-    int a, b;
+    double a, b;
     scanf("%lf%lf", &a, &b);
-    printf(" Multiplication = %0.04f\n", a * b);
+    printf(" Multiplication = %0.04lf\n", a * b);
 }
 
 void division()
 {
     printf("Enter the numbers you want to divide: ");
-    int a, b;
+    double a, b;
     scanf("%lf%lf", &a, &b);
-    printf(" Division %0.04f\n", a / b);
+    printf(" Division %0.04lf\n", a / b);
+}
+////////////////////  Zulkar Nayem - End /////////////////
+
+////////////////////  Tanim - Start /////////////////
+void power()
+{
+    double base;
+    double power;
+    printf("Enter the base and the power: ");
+    scanf("%lf%lf", &base, &power);
+    double value = pow(base, power);
+    printf("The power is %0.4lf", value);
 }
 
+void square()
+{
+    double number;
+    printf("Enter the number you want the square of: ");
+    scanf("%lf", &number);
+    double value = pow(number, 2);
+    printf("The square of %lf is %0.4lf", number, value);
+}
+
+void cube()
+{
+    double number;
+    printf("Enter the number you want the cube of: ");
+    scanf("%lf", &number);
+    double value = pow(number, 3);
+    printf("The cube of %lf is %0.4lf", number, value);
+}
+
+void percentage()
+{
+    double number, percentage;
+    printf("Enter the number and the percentage(%%): ");
+    scanf("%lf", &number, &percentage);
+    double value = number * (percentage / 100);
+    printf("The %lf%% of %lf is %0.4lf", percentage, number, value);
+}
+////////////////////  Tanim - End /////////////////
+
+////////////////////  Suleiman - Start /////////////////
 void modulus()
 {
     printf("Enter the numbers you want to find modulus of: ");
     int a, b;
-    scanf("%lf%lf", &a, &b);
-    printf("The modulus of a and b is %0.04f\n", a % b);
+    scanf("%d%d", &a, &b);
+    printf("The modulus of %d and %d is %d\n", a, b, a % b);
 }
 
 void factorial()
@@ -193,49 +283,48 @@ void factorial()
     printf("\nFactorial of %d is %d", n, factorial);
 }
 
-void power()
-{
-    double b;
-    double p;
-    printf("Enter the base and the power: ");
-    scanf("%lf%lf", &b, &p);
-    double e = pow(b, p);
-    printf("The power is %0.4lf", e);
-}
-
-void square()
-{
-    double b;
-    printf("Enter the number you want the square of: ");
-    scanf("%lf", &b);
-    double p = pow(b, 2);
-    printf("The square of %lf is %0.4lf", b, p);
-}
-
-void cube()
-{
-    double b;
-    printf("Enter the number you want the cube of: ");
-    scanf("%lf", &b);
-
-    double p = pow(b, 3);
-    printf("The cube of %lf is %0.4lf", b, p);
-}
-
 void squareroot()
 {
-    double b;
+    double number;
     printf("Enter the number you want the square root of : ");
-    scanf("%lf", &b);
-    double s = sqrt(b);
-    printf("The square root of %lf is %0.4lf", b, s);
+    scanf("%lf", &number);
+    double root = sqrt(number);
+    printf("The square root of %lf is %0.4lf", number, root);
 }
 
+void cuberoot()
+{
+    double number;
+    printf("Enter the number you want the square root of : ");
+    scanf("%lf", &number);
+    double root = pow(number, 1 / 3);
+    printf("The square root of %lf is %0.4lf", number, root);
+}
+
+void nthRootOfX()
+{
+    double number, r;
+    printf("Enter the number and root value : ");
+    scanf("%lf%lf", &number, &r);
+    double root = pow(number, 1 / r);
+    printf("The value is %0.4lf", root);
+}
+////////////////////  Suleiman - End /////////////////
+
+////////////////////  Tanvir - Start /////////////////
 void SIN()
 {
     double b;
-    printf("Enter the value in degrees: ");
-    scanf("%lf", &b);
+    printf("Enter the value in degrees for sin(x): ");
+
+    if (scanf("%lf", &b) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+
     double radians = b * (M_PI / 180.0);
     double si = sin(radians);
     printf("Sin(%lf degrees) = %0.4lf\n", b, si);
@@ -244,8 +333,16 @@ void SIN()
 void COS()
 {
     double b;
-    printf("Enter the value in degrees: ");
-    scanf("%lf", &b);
+    printf("Enter the value in degrees for cos(x): ");
+
+    if (scanf("%lf", &b) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+
     double radians = b * (M_PI / 180.0);
     double co = cos(radians);
     printf(" Cos(%lf) = %0.4lf", b, co);
@@ -254,18 +351,37 @@ void COS()
 void TAN()
 {
     double b;
-    printf("Enter the value in degrees: ");
-    scanf("%lf", &b);
+    printf("Enter the value in degrees for tan(x): ");
+
+    if (scanf("%lf", &b) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+    if (fmod(b, 180.0) == 90.0)
+    {
+        printf("Tan(%lf) is undefined or infinity.\n", b);
+        return;
+    }
     double radians = b * (M_PI / 180.0);
     double ta = tan(radians);
-    printf("Tan(%lf) = %0.4lf", b, ta);
+
+    printf("Tan(%lf) = %0.4lf\n", b, ta);
 }
 
 void SIN_INVERSE()
 {
     double b;
-    printf("Enter the value (-1 <= x <= 1): ");
-    scanf("%lf", &b);
+    printf("Enter the value for arc-sin(x) (Range: -1 <= x <= 1): ");
+    if (scanf("%lf", &b) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     if (b >= -1 && b <= 1)
     {
@@ -282,8 +398,15 @@ void SIN_INVERSE()
 void COS_INVERSE()
 {
     double b;
-    printf("Enter the value (-1 <= x <= 1): ");
-    scanf("%lf", &b);
+    printf("Enter the value for arc-cos(x) (Range: -1 <= x <= 1): ");
+
+    if (scanf("%lf", &b) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     if (b >= -1 && b <= 1)
     {
@@ -300,28 +423,115 @@ void COS_INVERSE()
 void TAN_INVERSE()
 {
     double b;
-    printf("Enter the value: ");
-    scanf("%lf", &b);
+    printf("Enter the value for arc-tan(x): ");
+
+    if (scanf("%lf", &b) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     double result = atan(b);
     double degrees = result * (180.0 / M_PI);
     printf("Arc_Tan(%lf) = %0.4lf degrees\n", b, degrees);
 }
+////////////////////  Tanvir - End /////////////////
+
+////////////////////  Rahim - Start /////////////////
+void LOG()
+{
+    double value;
+    printf("Enter a positive value for log(x): ");
+    if (scanf("%lf", &value) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+
+    if (value > 0)
+    {
+        double result = log10(value);
+        printf("log(%lf) = %0.4lf\n", value, result);
+    }
+    else
+    {
+        printf("Invalid input. Log is only defined for positive values.\n");
+    }
+}
+
+void LN()
+{
+    double value;
+    printf("Enter a positive value for ln(x): ");
+    if (scanf("%lf", &value) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+
+    if (value > 0)
+    {
+        double result = log(value);
+        printf("ln(%lf) = %0.4lf\n", value, result);
+    }
+    else
+    {
+        printf("Invalid input. ln is only defined for positive values.\n");
+    }
+}
+
+void exponential()
+{
+    double value;
+    printf("Enter a value for e^x: ");
+    if (scanf("%lf", &value) != 1)
+    {
+        printf("Invalid input. Please enter a valid number.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
+
+    double result = exp(value);
+    printf("e^(%lf) = %0.4lf\n", value, result);
+}
 
 void twoRootsLinearEquations()
 {
     double a1, b1, c1, a2, b2, c2, x, y;
+    int result;
 
     printf("Enter coefficients a1, b1, c1 for the first equation (a1x + b1y + c1 = 0): ");
-    scanf("%lf %lf %lf", &a1, &b1, &c1);
+    result = scanf("%lf %lf %lf", &a1, &b1, &c1);
+    if (result != 3)
+    {
+        printf("Invalid input! Please enter valid number coefficients for the first equation.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     printf("Enter coefficients a2, b2, c2 for the second equation (a2x + b2y + c2 = 0): ");
-    scanf("%lf %lf %lf", &a2, &b2, &c2);
+    result = scanf("%lf %lf %lf", &a2, &b2, &c2);
+    if (result != 3)
+    {
+        printf("Invalid input! Please enter valid number coefficients for the second equation.\n");
+        // Clear input buffer
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     double determinant = a1 * b2 - a2 * b1;
     if (determinant == 0)
     {
-        printf("The equations have no unique solution (they may be parallel or coincident).\n");
+        printf("The equations have no unique solution (they may be parallel).\n");
         return;
     }
 
@@ -333,24 +543,44 @@ void twoRootsLinearEquations()
     printf("y = %0.4lf\n", y);
 }
 
-
-void threeRootsLinearEquations() {
+void threeRootsLinearEquations()
+{
     double a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3;
     double x, y, z;
 
     printf("Enter coefficients a1, b1, c1, d1 for the first equation (a1x + b1y + c1z + d1 = 0): ");
-    scanf("%lf %lf %lf %lf", &a1, &b1, &c1, &d1);
+
+    if (scanf("%lf %lf %lf %lf", &a1, &b1, &c1, &d1) != 4)
+    {
+        printf("Invalid input. Please enter valid numeric values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     printf("Enter coefficients a2, b2, c2, d2 for the second equation (a2x + b2y + c2z + d2 = 0): ");
-    scanf("%lf %lf %lf %lf", &a2, &b2, &c2, &d2);
+    if (scanf("%lf %lf %lf %lf", &a2, &b2, &c2, &d2) != 4)
+    {
+        printf("Invalid input. Please enter valid numeric values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     printf("Enter coefficients a3, b3, c3, d3 for the third equation (a3x + b3y + c3z + d3 = 0): ");
-    scanf("%lf %lf %lf %lf", &a3, &b3, &c3, &d3);
+    if (scanf("%lf %lf %lf %lf", &a3, &b3, &c3, &d3) != 4)
+    {
+        printf("Invalid input. Please enter valid numeric values.\n");
+        while (getchar() != '\n')
+            ;
+        return;
+    }
 
     double determinant = a1 * (b2 * c3 - b3 * c2) - b1 * (a2 * c3 - a3 * c2) + d1 * (a2 * b3 - a3 * b2);
-    
-    if (determinant == 0) {
-        printf("The equations have no unique solution (they may be parallel or coincident).\n");
+
+    if (determinant == 0)
+    {
+        printf("The equations have no unique solution (they may be parallel).\n");
         return;
     }
 
@@ -363,3 +593,4 @@ void threeRootsLinearEquations() {
     printf("y = %0.4lf\n", y);
     printf("z = %0.4lf\n", z);
 }
+////////////////////  Rahim - End /////////////////
