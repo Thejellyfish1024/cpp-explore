@@ -21,7 +21,7 @@ int main()
 
     printf("Now enter the new value that you want to insert: ");
     scanf("%d", &newValue);
-    printf("Enter the index: ");
+    printf("Enter the even index: ");
     scanf("%d", &index);
 
     for (int i = n; i >= index; i--)
