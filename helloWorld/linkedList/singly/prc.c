@@ -5,27 +5,35 @@ struct node
 {
     int number;
     struct node *next;
-};
+} *head;
 
+void recursionPrint(struct node *ptr)
+{
+    if (ptr == NULL)
+    {
+        return;
+    }
+    recursionPrint(ptr->next);
+    printf("%d ", ptr->number);
+}
 int main()
 {
-    struct node *head = (struct node *)malloc(sizeof(struct node));
-    head->number = 45;
-    head->next = NULL;
+    struct node *first, *second, *third;
+    first = (struct node *)malloc(sizeof(struct node));
+    second = (struct node *)malloc(sizeof(struct node));
+    third = (struct node *)malloc(sizeof(struct node));
 
-    struct node *current = (struct node *)malloc(sizeof(struct node));
-    current->number = 60;
-    current->next = NULL;
-    head->next = current;
+    first->number = 60;
+    first->next = second;
 
-    current = (struct node *)malloc(sizeof(struct node));
-    current->number = 560;
-    current->next = NULL;
-    head->next->next = current;
+    head = first;
 
-    printf("%d\n", head->number);
-    printf("%d\n", head->next->number);
-    printf("%d\n", head->next->next->number);
-    printf("%d\n", head->next->next->next->number);
+    second->number = 560;
+    second->next = third;
+
+    third->number = 300;
+    third->next = NULL;
+
+    recursionPrint(head);
     return 0;
 }
