@@ -19,6 +19,8 @@
         "tuple": "c",
         "type_traits": "c",
         "utility": "c",
-        "random": "cpp"
+        "random": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp"
     }
 }
