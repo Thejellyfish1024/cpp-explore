@@ -10,6 +10,15 @@
         "stdio.h": "c",
         "*.tcc": "c",
         "istream": "c",
-        "streambuf": "c"
+        "streambuf": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "array": "c",
+        "functional": "c",
+        "regex": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "random": "cpp"
     }
 }
